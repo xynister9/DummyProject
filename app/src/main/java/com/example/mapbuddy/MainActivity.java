@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText mail= findViewById(R.id.editTextTextEmailAddress);
         final EditText number= findViewById(R.id.editTextPhone);
         Button buttontwo=findViewById(R.id.button2);
+        
         buttontwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -125,12 +125,15 @@ public class page4 extends AppCompatActivity {
             Toast.makeText(this, "Inappropriate location or destination", Toast.LENGTH_SHORT).show();
             return ;
         }
+
         Intent intent = new Intent(this, pathshower.class);
+
         intent.putExtra("start", start);
         intent.putExtra("end", end);
         startActivity(intent);
 
     }
+
 }
 
 ;

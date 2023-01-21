@@ -1,18 +1,5 @@
 package com.example.mapbuddy;
 
-//import androidx.appcompat.app.AppCompatActivity;
-//
-//import android.os.Bundle;
-//
-//public class pathfinder extends AppCompatActivity {
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_pathfinder);
-//    }
-//}
-
 import android.util.Log;
 import android.widget.Toast;
 
@@ -109,7 +96,6 @@ public class pathfinder {
 
     }
 
-
     public ArrayList<Integer> dijkstra_bfs(int src , int end ){
 
         Log.i("selected" , src+" "+ end ) ;
@@ -141,6 +127,7 @@ public class pathfinder {
         Collections.reverse(res);
         return res ;
     }
+
     static class Pair implements Comparable<Pair> {
         int node;
         int dis;
@@ -158,61 +145,20 @@ public class pathfinder {
     public ArrayList<String> givePath( String start , String end ) {
         int pt = 1 ;
         ArrayList<String> shortestPath = new ArrayList<>() ;
+
         if(start.equals(end)) {
             shortestPath.add("You are here only !!");
             return shortestPath;
         }
-        else if(start.equals("Canteen") && end.equals("Auditorium")){
-            shortestPath.add( (pt++) + ". "+ "From Canteen Take left" );
-            shortestPath.add( "\n"+ (pt++) + ". "+ "Take left towards Boys Hostel" );
-            shortestPath.add( "\n"+(pt++) + ". "+ "From Boys Hostel turn right" );
-            shortestPath.add( "\n"+(pt++) + ". "+ "From library turn right" );
-            shortestPath.add( "\n"+(pt++) + ". "+ "Head straight 200m to Lal Chowk" );
-            shortestPath.add( "\n"+(pt++) + ". "+ "Take stairs at Management Block to first floor" );
-            shortestPath.add( "\n"+(pt) + ". "+ "Auditorium is on right ." );
-            return shortestPath ;
-        }
-        else if(start.equals("Main Gate") && end.equals("Shakuntalam Hall")){
-            shortestPath.add( (pt++) + ". " + "Head straight 180m to Library");
-            shortestPath.add( (pt++) + ". " + "From Library turn right");
-            shortestPath.add( (pt++) + ". " + "Head straight to Boys Hostel");
-            shortestPath.add( (pt++) + ". " + "From Boys Hostel turn left");
-            shortestPath.add( (pt++) + ". " + "Head straight 60m to Shakuntalam");
-            return shortestPath ;
-        }
-        else if(start.equals("Main Gate") && end.equals("Girls Hostel")){
-            shortestPath.add( (pt++) + ". " + "Head straight 380m to MBA Park");
-            shortestPath.add( (pt++) + ". " + "From MBA Park turn right");
-            shortestPath.add( (pt++) + ". " + "Head straight 80m to Girls Hostel");
-            return shortestPath ;
-        }
-
-        else if(start.equals("Main Gate") && end.equals("Student Window")){
-            shortestPath.add( (pt++) + ". " + "From Main Gate turn right");
-            shortestPath.add( (pt++) + ". " + "Head straight 200m to Mother Dairy");
-            shortestPath.add( (pt++) + ". " + "From Mother Dairy turn left");
-            shortestPath.add( (pt++) + ". " + "Head straight 250m to Student Window");
-            shortestPath.add( (pt++) + ". " + "Student Window is on right .");
-            return shortestPath ;
-        }
-        else if(start.equals("Main Gate") && end.equals("Administrative Block")){
-            shortestPath.add( (pt++) + ". " + "Head 360m straight to Administrative Block");
-            shortestPath.add( (pt++) + ". " + "Administrative Block is on right");
-            return shortestPath ;
-        }
-        else if(start.equals("Main Gate") && end.equals("Boys Hostel")){
-            shortestPath.add( (pt++) + ". " + "Head straight 180m to Library");
-            shortestPath.add( (pt++) + ". " + "From Library turn right");
-            shortestPath.add( (pt++) + ". " + "Head straight to Boys Hostel");
-            return shortestPath ;
-        }
-
+        
         int ids , ide ;
+        
         try{
             ids = nodeNumber.get(start)  ;
             ide = nodeNumber.get(end)  ;
         }
         catch (Exception  e){
+            e.printStackTrace() ;
             return shortestPath ;
         }
 
